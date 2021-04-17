@@ -26,6 +26,9 @@
     .details {
         grid-template-columns: 1fr;
     }
+    .navigation ul li a {
+        padding: 8px 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -47,6 +50,9 @@
     }
     .main.active {
         left: var(--common_width);
+    }
+    .navigation ul li a {
+        padding: 5px 0;
     }
 }
 
