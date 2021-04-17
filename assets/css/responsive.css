@@ -1,0 +1,93 @@
+/*--------------------- all responsive CSS CODE ---------------------*/
+
+@media (max-width: 1200px) {
+     :root {
+        --common_width: 60px;
+    }
+    html {
+        font-size: 95%;
+    }
+    .navigation.active {
+        width: 300px;
+        z-index: 99;
+    }
+    .main.active {
+        --common_width: 300px;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 90%;
+    }
+    .card_box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 88%;
+    }
+    .card_box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .navigation {
+        left: -100%;
+    }
+    .navigation.active {
+        left: 0;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main.active {
+        left: var(--common_width);
+    }
+}
+
+@media (max-width: 576px) {
+    .search {
+        width: inherit;
+    }
+}
+
+@media (max-width: 480px) {
+     :root {
+        --common_width: 250px;
+    }
+    .navigation.active {
+        width: var(--common_width);
+    }
+    .main.active {
+        left: 250px;
+    }
+    .details .recent_orders {
+        overflow-x: auto;
+    }
+    .details .recent_orders table {
+        width: 200%;
+    }
+}
+
+@media (max-width: 375px) {
+    .toggle.active {
+        z-index: 9999;
+        position: fixed;
+        top: 5px;
+        right: 0;
+    }
+    .toggle.active::before {
+        color: #fff;
+    }
+    .main.active {
+        left: -100%;
+    }
+    .navigation.active {
+        width: 100%;
+    }
+}

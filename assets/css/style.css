@@ -1,0 +1,514 @@
+/*====================== ALL CSS CODE ======================*/
+
+
+/*========================
+fonts link
+========================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*
+===================================
+default CSS
+===================================
+*/
+
+*,
+::before,
+::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-family: var(--font_1);
+    overflow-x: hidden;
+}
+
+a {
+    display: inline-block;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+input {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+
+/*
+===================================
+common CSS
+===================================
+*/
+
+:root {
+    --font_1: "Poppins", sans-serif;
+    --common_width: 300px;
+    --aside_bg_color: #003147;
+    --li_hover_bg_color: #03a9f4;
+    --main_topbar_bg: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.primary_btn {
+    background-color: #03a9f4;
+    background-color: var(--li_hover_bg_color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.status {
+    display: inline-block;
+    background: #f00;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    cursor: default;
+    font-size: 0.8rem;
+}
+
+.deliverd {
+    background-color: #689f28;
+}
+
+.pending {
+    background-color: #dba402;
+}
+
+.return {
+    background-color: #f00;
+}
+
+.inprogress {
+    background-color: #1795ce;
+}
+
+
+/*
+===================================
+navigation AREA CSS
+===================================
+*/
+
+.navigation {
+    position: fixed;
+    width: var(--common_width);
+    height: 100%;
+    background-color: #003147;
+    background-color: var(--aside_bg_color);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul {
+    position: absolute;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    border-radius: 30px 0 0 30px;
+    max-width: 95%;
+    margin-left: auto;
+}
+
+.navigation ul li.active {
+    background-color: #f5f5f5;
+    background-color: var(--main_topbar_bg);
+}
+
+.navigation ul li:hover {
+    background-color: #03a9f4;
+    background-color: var(--li_hover_bg_color);
+}
+
+.navigation ul li:first-child {
+    margin-bottom: 10px;
+}
+
+.navigation ul li:first-child:hover {
+    background-color: transparent;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navigation ul li.active a {
+    color: #03a9f4;
+    color: var(--li_hover_bg_color);
+}
+
+.navigation ul li.active:hover a {
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.navigation ul li:first-child a .icon {
+    font-size: 38px;
+}
+
+.navigation ul li a .title {
+    white-space: nowrap;
+}
+
+
+/* top bar */
+
+.main {
+    position: absolute;
+    width: calc(100% - var(--common_width));
+    min-height: 100vh;
+    left: var(--common_width);
+    background-color: #f5f5f5;
+    background-color: var(--main_topbar_bg);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.main.active {
+    --common_width: 60px;
+}
+
+.main .topbar {
+    background-color: #fff;
+    padding: 0 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "\f0c9";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 600;
+    font-size: 24px;
+    color: #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    border-radius: 40px;
+    height: 40px;
+    padding: 5px 20px 5px 38px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.search label i {
+    position: absolute;
+    font-size: 14px;
+    left: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.user {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.card_box {
+    position: relative;
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.card_box .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.card_box .card .numbers {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.card_box .card .card_name {
+    color: #999;
+}
+
+.card_box .card .icon_Bx {
+    font-size: 2.5rem;
+    color: #03a9f4;
+    color: var(--li_hover_bg_color);
+}
+
+.details {
+    position: relative;
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+
+
+/*------ Recent Orders ------*/
+
+.details .recent_orders {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0.25rem;
+    min-height: 530px;
+}
+
+.details .card_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.card_header h2 {
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.details table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.details table thead th {
+    font-weight: 600;
+    text-align: left;
+}
+
+.details .recent_orders table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recent_orders table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details .recent_orders table tbody tr:hover {
+    background-color: #03a9f4;
+    background-color: var(--li_hover_bg_color);
+    color: #fff;
+}
+
+.details .recent_orders table thead tr th,
+.details .recent_orders table tbody tr td {
+    padding: 9px 5px;
+}
+
+.details .recent_orders table tbody tr td:first-child,
+.details .recent_customers table tbody tr td:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.details .recent_orders table thead tr th:last-child,
+.details .recent_orders table tbody tr td:last-child,
+.details .recent_customers table tbody tr td:last-child {
+    text-align: right;
+    border-radius: 0 5px 5px 0;
+}
+
+.details .recent_orders table thead tr th:nth-child(2),
+.details .recent_orders table tbody tr td:nth-child(2) {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.details .recent_orders table thead tr th:nth-child(3),
+.details .recent_orders table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+
+/*---- Recent Customers ----*/
+
+.details .recent_customers {
+    position: relative;
+    min-height: 530px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0.25rem;
+}
+
+.details .recent_customers table tbody tr td h4 span {
+    font-size: 14px;
+    color: #999;
+}
+
+.details .recent_customers table tbody tr:hover,
+.details .recent_customers table tbody tr:hover td h4 span {
+    background-color: #03a9f4;
+    background-color: var(--li_hover_bg_color);
+    color: #fff;
+}
+
+.details .recent_customers table tbody tr td {
+    padding: 7px 10px;
+}
+
+.details .recent_customers table tbody tr td:first-child {
+    width: 60px;
+}
+
+.details .recent_customers table tbody tr td:last-child {
+    -moz-text-align-last: left;
+    text-align-last: left;
+}
+
+.details .recent_customers .img_bx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.details .recent_customers .img_bx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.details .recent_customers table tbody tr td h4 {
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+
+/*
+========================
+        THE END 
+========================
+*/
