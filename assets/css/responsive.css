@@ -52,7 +52,7 @@
         left: var(--common_width);
     }
     .navigation ul li a {
-        padding: 5px 0;
+        padding: 6px 0;
     }
 }
 
