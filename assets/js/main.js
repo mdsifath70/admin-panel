@@ -6,13 +6,13 @@
 let menuList = document.querySelectorAll('.navigation ul li');
 menuList.forEach((menu) => {
     menu.addEventListener('click', function(){
-        const menuClassRemove = function(){
+        function menuClassRemove(){
             menu.classList.remove('active');
         }
         menuClassRemove();
         menu.classList.add('active');
     });
-})
+});
 
 // toggle element select
 let toggle = document.getElementsByClassName("toggle")[0];
