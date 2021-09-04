@@ -4,13 +4,15 @@
 
 // nav menu list active
 let menuList = document.querySelectorAll('.navigation ul li');
-menuList.forEach((menu) => {
-    function menuClassRemove(){
+function removeActiveClass() {
+    menuList.forEach((menu) => {    
         menu.classList.remove('active');
-    }
+    });
+}
+menuList.forEach((menu) => {    
     menu.addEventListener('click', function(){
-        menuClassRemove();
-        menu.classList.add('active');
+        removeActiveClass();
+        this.classList.add('active');
     });
 });
 
