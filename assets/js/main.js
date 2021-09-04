@@ -5,10 +5,10 @@
 // nav menu list active
 let menuList = document.querySelectorAll('.navigation ul li');
 menuList.forEach((menu) => {
+    function menuClassRemove(){
+        menu.classList.remove('active');
+    }
     menu.addEventListener('click', function(){
-        function menuClassRemove(){
-            menu.classList.remove('active');
-        }
         menuClassRemove();
         menu.classList.add('active');
     });
