@@ -238,7 +238,7 @@ navigation AREA CSS
 
 .toggle::before {
   content: "\f0c9";
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Pro";
   font-weight: 600;
   font-size: 24px;
   color: #111;
